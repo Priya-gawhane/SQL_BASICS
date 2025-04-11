@@ -1,37 +1,19 @@
-CREATE DATABASE college;
-SHOW TABLES;
-USE college;
+CREATE DATABASE library;
+USE library;
 
-CREATE TABLE student (
-  rollno INT PRIMARY KEY,
-  name VARCHAR(50)
+CREATE TABLE Books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    genre VARCHAR(100),
+    published_year YEAR,
+    is_available BOOLEAN DEFAULT TRUE
 );
 
-CREATE DATABASE company_xyz;
-USE company_xyz;
-
-CREATE TABLE employee (
-  id INT PRIMARY KEY,
-  name VARCHAR(50),
-  salary INT
+CREATE TABLE Members (
+    member_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    phone_number VARCHAR(15),
+    join_date DATE DEFAULT (CURRENT_DATE)
 );
-
-INSERT INTO employee
-(id, name, salary)
-VALUES
-(1, "ADAM", 25000),
-(2,"BOB", 19000),
-(3, "LAURA", 26000);
-
-SELECT * FROM employee;
-
-CREATE TABLE empT (
-  id INT,
-  salary INT DEFAULT 25000
-);
-
-INSERT INTO empT (id) VALUES (101);
-SELECT * FROM empT;
-
-
-
